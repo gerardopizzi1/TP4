@@ -1,0 +1,131 @@
+
+
+body {
+    background-color: rgb(252, 255, 47);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color:black;
+    font-family: "Dancing Script", cursive;
+    font-size: 1.5em;
+}
+
+h2 {
+    color:red;
+    font-size: 32px;
+}
+p {
+    font-size:x-large;
+}
+
+
+h3 {font-size: 24px;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.item1{
+    width: auto;
+    height: auto;
+}
+
+.item2 {
+    width:2%;
+    height:100%;
+    color:red;
+    animation-name: cambiarColor;
+    animation-duration: 20s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cambiarColor {
+    0% {background: rgb(245, 165, 18); height: 0%;}        
+    50% {background: red; height: 50%;}     
+    100% {background: rgb(245, 7, 154); height: 95%;}
+}
+
+
+
+.item4 {
+    width:auto;
+    height:auto;
+    border-color: black;
+    border-style: solid;
+    margin: 10%;
+    justify-content: space-between;
+}
+
+.item1 {grid-area: header;}
+.item2 {grid-area: left;}
+.item3 {grid-area: main;}
+.item4 {grid-area: right;}
+.item5 {grid-area: footer;}
+
+
+
+.grid-container 
+{
+    display: grid;
+    grid-template: 5% 60% 30% / 2% 70% 28%;
+        grid-template-areas:
+        'header header header'
+        'left main right'
+        'footer footer footer';
+    grid-gap: 10px;
+    
+}
+
+.grid-container>div {
+    background-color: rgb(252, 255, 47);
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+
+
+@media only screen and (max-width: 1000px) 
+    {.grid-container {
+    grid-template: 1.5% 1fr 1fr 45% / 5% 95%;
+    grid-template-areas: 
+        'header header' 
+        'left main'
+        'left right'
+        'footer footer';
+    grid-gap: 10px;
+
+}}
+
+@media only screen and (max-width: 800px) 
+{.item3 {font-style: oblique; color:red;
+        font-size: xx-small;}
+.grid-container {
+    grid-template: 1.5% 1fr 1fr 40% / 5% 95%;
+    grid-template-areas: 
+        'header header' 
+        'left main'
+        'left right'
+        'footer footer';
+    grid-gap: 10px;
+    }}
+
+
+
+@media only screen and (max-width: 600px) 
+{.item3 {font-weight: bold; color:black;
+        font-size: xx-small;}
+.grid-container {
+    grid-template: 3% 1fr 1fr 40% / 5% 95%;
+    grid-template-areas: 
+        'header header' 
+        'left main'
+        'left right'
+        'footer footer';
+    grid-gap: 10px;
+    
+}}
+
